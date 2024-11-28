@@ -1,0 +1,25 @@
+.parent{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+.left{
+    width: 20%;
+    height: 100%;
+    background-color: black;
+    color: white;
+    position: relative;
+    justify-items: center; 
+    overflow: auto;
+    cursor: pointer;
+}
+.right{
+    width: 80%;
+    height: 100%;
+    background-color: purple;
+    overflow: auto;
+}
+#logout{
+    height: 50px;
+    width: 100px;
+}
