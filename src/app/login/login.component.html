@@ -1,0 +1,18 @@
+<p>login works!</p>
+<div class="login-container">
+    <h2>Login</h2>
+    <form action="login_process.php" method="post">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <button type="submit" class="login-btn" routerLink="/dashboard">Login</button>
+    </form>
+    <p>Don't have an account? <a href="#">Sign Up</a></p>
+    <router-outlet></router-outlet>
+    <app-root></app-root>
+</div>
