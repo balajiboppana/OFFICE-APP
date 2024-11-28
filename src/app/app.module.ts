@@ -12,6 +12,7 @@ import { CreateEmployeeComponent } from './create-employee/create-employee.compo
 import { AllEmployeesComponent } from './all-employees/all-employees.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

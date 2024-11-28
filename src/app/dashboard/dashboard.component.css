@@ -11,6 +11,7 @@
     position: relative;
     justify-items: center; 
     overflow: auto;
+    
     cursor: pointer;
 }
 .right{
