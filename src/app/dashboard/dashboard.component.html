@@ -1,1 +1,14 @@
-<p>dashboard works!</p>
+<div class="parent">
+    <div class="left">
+        <h1>Office App</h1>
+        <hr>
+        <h3 routerLink="home">Home</h3>
+        <h3 routerLink="create-employee">Create Employee</h3>
+        <h3 routerLink="all-employees">All Employees</h3>
+        <hr>
+        <button routerLink="/login" id="logout">logout</button>
+    </div>
+    <div class="right">
+        <router-outlet></router-outlet>
+    </div>
+</div>
