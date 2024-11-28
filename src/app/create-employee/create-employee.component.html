@@ -1,1 +1,91 @@
-<p>create-employee works!</p>
+<h1>Create Employee</h1>
+<form [formGroup]="employeesForm">
+
+        <label for="">Name:</label>
+        <input type="text" formControlName="name">
+        <br>
+
+        <label for="">Gender:</label>
+        <input type="radio" name="gender" formControlName="gender" value="male" >
+        <label for="">Male</label>
+        <input type="radio" name="gender" formControlName="gender" value="female" >
+        <label for="">Female</label>
+        <br>
+
+        <label for="">Company:</label>
+        <input type="text" formControlName="company">
+        <br>
+    
+        <label for="">Role</label>
+        <input type="text" formControlName="role">
+        <br>
+    
+        <label for="">Package:</label>
+        <input type="number" formControlName="package">
+        <br>
+
+        <label for="">email:</label>
+        <input type="email" formControlName="email">
+        <br>
+
+        <label for="">DOB:</label>
+        <input type="date" formControlName="dob">
+        <br>
+
+        <label for="">Address:</label>
+        <br><br>
+            <div formGroupName="address">
+                <label for="">Address Line:</label>
+                    <input type="text" formControlName="addressLine">
+                    <br>
+    
+                    <label for="">City:</label>
+                    <input type="text" formControlName="city">
+                    <br>
+    
+                    <label for="">State:</label>
+                    <input type="text" formControlName="state">
+                    <br>
+
+                    <label for="">Pincode:</label>
+                    <input type="text" formControlName="pincode">
+                    <br>
+            </div>
+                    
+    
+        
+        <br>
+
+        <label for="">Hike:</label>
+    <button (click)="addhike()" class="btn btn-primary">Add hike</button>
+    <br><br>
+
+    <div formArrayName="hikes">
+        <div *ngFor="let card of hikesFormArray.controls;let i=index" >
+            <div formGroupName="{{i}}" >
+
+                <h2>card {{i+1}}</h2>
+                <label for="">Year: </label>
+                <input type="number" formControlName="year">
+                <br>
+
+                <label for="">Percentage: </label>
+                <input type="number" formControlName="percentage">
+                <br>
+
+                <button class="btn btn-danger" (click)="deleteCard(i)">Delete</button>
+                <hr>
+            </div>
+        </div>
+    </div>
+
+        <label for="">Workmode:</label>
+        <input type="radio" name="workMode" formControlName="workMode" value="Hybrid">
+        <label for="">Hybrid</label>
+        <input type="radio" name="workMode" formControlName="workMode" value="WFH" >
+        <label for="">WFH</label>
+        <!-- <input type="radio" name="mode" formControlName="workMode" value="work" > -->
+        <br>
+        
+        <button (click)="submit()" class="btn btn-warning">submit</button>
+</form>
