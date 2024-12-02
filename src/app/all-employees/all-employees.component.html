@@ -1,34 +1,35 @@
-<input type="text" placeholder="search" [(ngModel)]="term" (keyup)="filter()">
+<div class="top">
+    <input  type="text" placeholder="search" [(ngModel)]="term" (keyup)="filter()">
+<div>
+    <select [(ngModel)]="column" >
+        <option >select</option>
+        <option>dob</option>
+        <option>package</option>
+        <option>id</option>
+    </select>
+    <select [(ngModel)]="order" >
+        <option>asc</option>
+        <option>desc</option>
+    </select>
+    <button Class="btn btn-warning" (click)="sort()">sort</button>
+</div>
+<div>
+    <select [(ngModel)]="limit" >
+        <option >10</option>
+        <option>20</option>
+        <option>30</option>
+        <option>40</option>
+    </select>
+    <select [(ngModel)]="page" >
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+    </select>
+    <button Class="btn btn-warning"(click)="pagination()">pagination</button>    
+</div>
+</div>
 <br>
-<br>
-<select [(ngModel)]="column" >
-    <option >select</option>
-    <option>dob</option>
-    <option>package</option>
-    <option>id</option>
-</select>
-<select [(ngModel)]="order" >
-    <option>asc</option>
-    <option>desc</option>
-</select>
-<button (click)="sort()">sort</button>
-<br>
-<br>
-<select [(ngModel)]="limit" >
-    <option >10</option>
-    <option>20</option>
-    <option>30</option>
-    <option>40</option>
-</select>
-<select [(ngModel)]="page" >
-    <option>1</option>
-    <option>2</option>
-    <option>3</option>
-</select>
-<button (click)="pagination()">pagination</button>
-<br>
-
-<table class="table table-dark table-striped">
+<table border="1" class="table table-dark ">
     <thead>
         <tr>
             <th>Name</th>
@@ -41,28 +42,33 @@
             <th>Hikes</th>
             <th>Work Mode</th>
             <th>Gender</th>
+            <th>Wifi Bill</th>
+            <th>Travel Bill</th>
             <th>Id</th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let employee of employees">
+        <tr  *ngFor="let employee of employees">
             <td>{{employee.name}}</td>
             <td>{{employee.company}}</td>
             <td>{{employee.role}}</td>
-            <td [ngClass]="{'text-danger':employee.package<9000000,'text-success':employee.package>=9000000}">{{employee.package}}</td>
+            <td [ngStyle]="{'background-color': employee.package<900000? 'red':'green'}">{{employee.package}}</td>
             <td>{{employee.email}}</td>
             <td>{{employee.dob}}</td>
-            <!-- <td>[{{employee.address}}]
-                [{{employee.address.addressLine}}]
-                [{{employee.address.city}}]
-                [{{employee.address.state}}]
-                [{{employee.address.pincode}}]
-            </td> -->
-        <td>
+            <td>
+                Address line: {{employee.address?.addressLine}}
+                <br>
+                City: {{employee.address?.city}}
+                <br>
+                State: {{employee.address?.state}}
+                <br>
+                Pincode: {{employee.address?.pincode}}
+            </td>
+        <!-- <td>
             <div>{{employee.address?.addressLine}}</div>
             <div>{{employee.address?.city}}, {{employee.address?.state}} - {{employee.address?.pincode}}</div>
-        </td>
+        </td> -->
             <td>
                 <div *ngFor="let hike of employee.hikes">
                     <div>Year: {{hike.year}}</div>
@@ -71,7 +77,9 @@
             </td>
             <td>{{employee.workMode}}</td>
             <td>{{employee.gender}}</td>
-            <td>{{employee.id}}</td>
+            <td>{{employee.wifibill}}</td>
+            <td>{{employee.travelBill}}</td>
+            <td >{{employee.id}}</td>
             <td><button (click)="delete(employee.id)" class="btn btn-danger">Delete</button></td>
         </tr>
     </tbody>

@@ -6,7 +6,7 @@
         <h3 routerLink="create-employee">Create Employee</h3>
         <h3 routerLink="all-employees">All Employees</h3>
         <hr>
-        <button routerLink="/login" id="logout">logout</button>
+        <button ngClass="btn btn-primary" (click)="logout()" id="logout">logout</button>
     </div>
     <div class="right">
         <router-outlet></router-outlet>
