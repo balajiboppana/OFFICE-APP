@@ -26,7 +26,8 @@ export class CreateEmployeeComponent {
       }),
       hikes:new FormArray([]),
       workMode: new FormControl(),
-      
+      wifibill: new FormControl(),
+      travelBill: new FormControl(),     
       // cards: new FormArray([]),
     },
   )

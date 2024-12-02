@@ -1,54 +1,53 @@
 <h1>Create Employee</h1>
 <form [formGroup]="employeesForm">
 
-        <label for="">Name:</label>
-        <input type="text" formControlName="name">
+        <label for="NAME">Name:</label>
+        <input id="NAME" type="text" formControlName="name" autocomplete="off">
         <br>
 
-        <label for="">Gender:</label>
-        <input type="radio" name="gender" formControlName="gender" value="male" >
-        <label for="">Male</label>
-        <input type="radio" name="gender" formControlName="gender" value="female" >
-        <label for="">Female</label>
+        <h6>Gender:</h6>
+        <input id="MALE" type="radio" name="gender" formControlName="gender" value="male" >
+        <label for="MALE">Male</label>
+        <input id="FEMALE" type="radio" name="gender" formControlName="gender" value="female" >
+        <label for="FEMALE">Female</label>
         <br>
 
-        <label for="">Company:</label>
-        <input type="text" formControlName="company">
+        <label for="COMPANY">Company:</label>
+        <input id="COMPANY" type="text" formControlName="company" autocomplete="off">
         <br>
     
-        <label for="">Role</label>
-        <input type="text" formControlName="role">
+        <label for="ROLE">Role</label>
+        <input id="ROLE" type="text" formControlName="role">
         <br>
     
-        <label for="">Package:</label>
-        <input type="number" formControlName="package">
+        <label for="PACKAGE">Package:</label>
+        <input id="PACKAGE" type="number" formControlName="package">
         <br>
 
-        <label for="">email:</label>
-        <input type="email" formControlName="email">
+        <label for="EMAIL">email:</label>
+        <input id="EMAIL" type="email" formControlName="email" autocomplete="off">
         <br>
 
-        <label for="">DOB:</label>
-        <input type="date" formControlName="dob">
+        <label for="Dob">DOB:</label>
+        <input id="Dob" type="date" formControlName="dob">
         <br>
 
-        <label for="">Address:</label>
-        <br><br>
+        <h6 for="">Address:</h6>
             <div formGroupName="address">
-                <label for="">Address Line:</label>
-                    <input type="text" formControlName="addressLine">
+                <label for="AL">Address Line:</label>
+                    <input id="AL" type="text" formControlName="addressLine">
                     <br>
     
-                    <label for="">City:</label>
-                    <input type="text" formControlName="city">
+                    <label for="CITY">City:</label>
+                    <input id="CITY" type="text" formControlName="city">
                     <br>
     
-                    <label for="">State:</label>
-                    <input type="text" formControlName="state">
+                    <label for="STATE">State:</label>
+                    <input id="STATE" type="text" formControlName="state">
                     <br>
 
-                    <label for="">Pincode:</label>
-                    <input type="text" formControlName="pincode">
+                    <label for="PINCODE">Pincode:</label>
+                    <input id="PINCODE" type="text" formControlName="pincode">
                     <br>
             </div>
                     
@@ -56,8 +55,8 @@
         
         <br>
 
-        <label for="">Hike:</label>
-    <button (click)="addhike()" class="btn btn-primary">Add hike</button>
+        <label for="HIKE">Hike:</label>
+    <button id="HIKE" (click)="addhike()" class="btn btn-primary">Add hike</button>
     <br><br>
 
     <div formArrayName="hikes">
@@ -65,12 +64,12 @@
             <div formGroupName="{{i}}" >
 
                 <h2>card {{i+1}}</h2>
-                <label for="">Year: </label>
-                <input type="number" formControlName="year">
+                <label for="YEAR">Year: </label>
+                <input id="YEAR" type="number" formControlName="year">
                 <br>
 
-                <label for="">Percentage: </label>
-                <input type="number" formControlName="percentage">
+                <label for="PERCENTAGE">Percentage: </label>
+                <input id="PERCENTAGE" type="number" formControlName="percentage">
                 <br>
 
                 <button class="btn btn-danger" (click)="deleteCard(i)">Delete</button>
@@ -79,13 +78,21 @@
         </div>
     </div>
 
-        <label for="">Workmode:</label>
-        <input type="radio" name="workMode" formControlName="workMode" value="Hybrid">
-        <label for="">Hybrid</label>
-        <input type="radio" name="workMode" formControlName="workMode" value="WFH" >
-        <label for="">WFH</label>
-        <!-- <input type="radio" name="mode" formControlName="workMode" value="work" > -->
+    <h6 for="">work Mode:</h6>
+    <input id="WFH" type="radio" name="workMode" formControlName="workMode" value="wfh">
+    <label for="WFH">work from home</label>
+    <input id="WFO" type="radio" name="workMode" formControlName="workMode" value="wfo">
+    <label for="WFO">work from office</label>
+    <br>
+
+<div *ngIf="employeesForm.get('workMode')?.value=='wfh'">
+    <label for="WFh">wifi bill:</label>
+    <input id="WFh" type="number" formControlName="wifibill">
+</div>
+<div *ngIf="employeesForm.get('workMode')?.value=='wfo'">
+    <label for="WFo">travelfee:</label>
+    <input id="WFo" type="number" formControlName="travelBill">
+</div>
         <br>
-        
         <button (click)="submit()" class="btn btn-warning">submit</button>
 </form>
