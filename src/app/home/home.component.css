@@ -39,11 +39,11 @@ nav .logo h1 {
     font-weight: 600;
 }
 
-#hero {
-    background: url('C:\Users\BALAJI\Desktop\Angular\Office-App\src\assets\officebcki.jpg') no-repeat center center/cover;
+.hero {
     color: white;
     text-align: center;
     padding: 6rem 2rem;
+    background-image: url("src/assets/officebcki.jpg");
 }
 
 #hero .cta-button {

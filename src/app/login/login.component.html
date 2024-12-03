@@ -18,13 +18,14 @@
     <form class="loginform" [formGroup]="loginForm" action="">
         <h1>Login</h1>
         <hr>
-        <input type="text" placeholder="enter your username" formControlName="email">
-        <input type="password" placeholder="enter your password" formControlName="password">
+        <label for="Email"></label>
+        <input id="Email" type="text" placeholder="enter your username" formControlName="email" autocomplete="off">
+        <label for="PASSWORD"></label>
+        <input id="PASSWORD" type="password" placeholder="enter your password" formControlName="password" autocomplete="off">
         <br>
         <p>Forgot password?</p>
         <button (click)="login()" id="loginbutton">LOGIN</button>
         <br>
-        <label for="">Not a member?</label>
-        <a href="">Signup</a>
+        <h6 for="">Not a member? <a href="">Signup</a></h6>
     </form>
 </div>
