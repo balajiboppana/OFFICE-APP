@@ -1,29 +1,31 @@
 <div class="top">
-    <input  type="text" placeholder="search" [(ngModel)]="term" (keyup)="filter()">
+    <pre> 
+<label for="SEARCH">Search: </label> <input id="SEARCH"  type="text" placeholder="search here" [(ngModel)]="term" (keyup)="filter()">
+    </pre>
 <div>
-    <select [(ngModel)]="column" >
-        <option >select</option>
-        <option>dob</option>
-        <option>package</option>
-        <option>id</option>
+    <select id="COLUMN" [(ngModel)]="column" >
+        <option id="COLUMN">select</option>
+        <option id="COLUMN">dob</option>
+        <option id="COLUMN">package</option>
+        <option id="COLUMN">id</option>
     </select>
-    <select [(ngModel)]="order" >
-        <option>asc</option>
-        <option>desc</option>
+    <select id="ORDER" [(ngModel)]="order" >
+        <option id="ORDER">asc</option>
+        <option id="ORDER">desc</option>
     </select>
     <button Class="btn btn-warning" (click)="sort()">sort</button>
 </div>
 <div>
-    <select [(ngModel)]="limit" >
-        <option >10</option>
-        <option>20</option>
-        <option>30</option>
-        <option>40</option>
+    <select id="LIMIT" [(ngModel)]="limit" >
+        <option id="LIMIT">10</option>
+        <option id="LIMIT">20</option>
+        <option id="LIMIT">30</option>
+        <option id="LIMIT">40</option>
     </select>
-    <select [(ngModel)]="page" >
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
+    <select id="PAGE" [(ngModel)]="page" >
+        <option id="PAGE">1</option>
+        <option id="PAGE">2</option>
+        <option id="PAGE">3</option>
     </select>
     <button Class="btn btn-warning"(click)="pagination()">pagination</button>    
 </div>
@@ -70,10 +72,20 @@
             <div>{{employee.address?.city}}, {{employee.address?.state}} - {{employee.address?.pincode}}</div>
         </td> -->
             <td>
-                <div *ngFor="let hike of employee.hikes">
-                    <div>Year: {{hike.year}}</div>
-                    <div>Percentage: {{hike.percentage}}%</div>
+                
+                <div  *ngIf="employee.hikes && employee.hikes.length > 0;else noHikes">
+                    <div *ngFor="let hike of employee.hikes">
+                        <ol>
+                            <li>Year: {{hike.year}}</li>
+                            <li>Percentage: {{hike.percentage}}%</li>
+                        </ol>
+                    </div>
                 </div>
+                <ng-template #noHikes>
+                    <p>No hikes available.</p>
+                  </ng-template>
+                    <!-- <div>Year: {{hike.year}}</div>
+                    <div>Percentage: {{hike.percentage}}%</div> -->
             </td>
             <td>{{employee.workMode}}</td>
             <td>{{employee.gender}}</td>
