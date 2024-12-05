@@ -10,3 +10,10 @@
     margin-top: 20px;
     justify-content: space-evenly;
 }
+
+thead {
+    overflow-y: auto;
+    height: 50px;
+    position: sticky;
+    top: 0;
+}
