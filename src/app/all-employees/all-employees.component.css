@@ -11,9 +11,10 @@
     justify-content: space-evenly;
 }
 
-thead {
+th{
     overflow-y: auto;
     height: 50px;
     position: sticky;
     top: 0;
+    background-color: lightseagreen;
 }
