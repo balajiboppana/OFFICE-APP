@@ -1,17 +1,31 @@
-<div class="login-container">
-    <h2>Login</h2>
-    <form action="login_process.php" method="post">
-        <div class="form-group">
-            <label for="username">Username: </label>
-            <input type="text" id="username" name="username" required>
-        </div>
+<!-- <div class="parent">
+    <form class="loginform" [formGroup]="loginForm" action="">
+        <h1>Sign In</h1>
         <br>
-        <div class="form-group">
-            <label for="password">Password: </label>
-            <input type="password" id="password" name="password" required>
-        </div>
-        <button type="submit" class="login-btn" routerLink="/dashboard">Login</button>
+<p>hello there</p>
+        <label for="">Username: </label>
+        <input type="text" placeholder="enter your username" formControlName="email">
+        <br>
+        <br>
+        <label for="">Password:</label>
+        <input type="password" placeholder="enter your password" formControlName="password">
+        <br>
+        <br>
+        <button (click)="login()" id="loginbutton">login</button>
     </form>
-    <p>Don't have an account? <a href="#">Sign Up</a></p>
-    <router-outlet></router-outlet>
+</div> -->
+<div class="body">
+    <form class="loginform" [formGroup]="loginForm" action="">
+        <h1>Login</h1>
+        <hr>
+        <label for="Email"></label>
+        <input id="Email" type="text" placeholder="enter your username" formControlName="email" autocomplete="off">
+        <label for="PASSWORD"></label>
+        <input id="PASSWORD" type="password" placeholder="enter your password" formControlName="password" autocomplete="off">
+        <br>
+        <p>Forgot password?</p>
+        <button (click)="login()" id="loginbutton">LOGIN</button>
+        <br>
+        <h6 for="">Not a member? <a href="">Signup</a></h6>
+    </form>
 </div>

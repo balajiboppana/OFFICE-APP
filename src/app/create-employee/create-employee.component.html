@@ -1,53 +1,54 @@
 <h1>Create Employee</h1>
 <form [formGroup]="employeesForm">
 
-        <label for="n">Name:</label>
-        <input id="n" type="text" formControlName="name">
+        <label for="">Name:</label>
+        <input type="text" formControlName="name">
         <br>
 
-        <h5>Gender:</h5>
-        <input id="ml" type="radio" name="gender" formControlName="gender" value="male" >
-        <label for="ml">Male</label>
-        <input id="fml" type="radio" name="gender" formControlName="gender" value="female" >
-        <label for="fml">Female</label>
+        <label for="">Gender:</label>
+        <input type="radio" name="gender" formControlName="gender" value="male" >
+        <label for="">Male</label>
+        <input type="radio" name="gender" formControlName="gender" value="female" >
+        <label for="">Female</label>
         <br>
 
-        <label for="c">Company:</label>
-        <input id="c" type="text" formControlName="company">
+        <label for="">Company:</label>
+        <input type="text" formControlName="company">
         <br>
     
-        <label for="R">Role</label>
-        <input id="R" type="text" formControlName="role">
+        <label for="">Role</label>
+        <input type="text" formControlName="role">
         <br>
     
-        <label for="p">Package:</label>
-        <input id="p" type="number" formControlName="package">
+        <label for="">Package:</label>
+        <input type="number" formControlName="package">
         <br>
 
-        <label for="e">email:</label>
-        <input id="e" type="email" formControlName="email">
+        <label for="">email:</label>
+        <input type="email" formControlName="email">
         <br>
 
-        <label for="d">DOB:</label>
-        <input id="d" type="date" formControlName="dob">
+        <label for="">DOB:</label>
+        <input type="date" formControlName="dob">
         <br>
 
-        <h5 for="">Address:</h5>
+        <label for="">Address:</label>
+        <br><br>
             <div formGroupName="address">
-                <label for="adrss">Address Line:</label>
-                    <input id="adrss" type="text" formControlName="addressLine">
+                <label for="">Address Line:</label>
+                    <input type="text" formControlName="addressLine">
                     <br>
     
-                    <label for="cty">City:</label>
-                    <input id="cty" type="text" formControlName="city">
+                    <label for="">City:</label>
+                    <input type="text" formControlName="city">
                     <br>
     
-                    <label for="stat">State:</label>
-                    <input id="stat" type="text" formControlName="state">
+                    <label for="">State:</label>
+                    <input type="text" formControlName="state">
                     <br>
 
-                    <label for="pncd">Pincode:</label>
-                    <input id="pncd" type="text" formControlName="pincode">
+                    <label for="">Pincode:</label>
+                    <input type="text" formControlName="pincode">
                     <br>
             </div>
                     
@@ -55,7 +56,7 @@
         
         <br>
 
-        <h5>Hike:</h5>
+        <label for="">Hike:</label>
     <button (click)="addhike()" class="btn btn-primary">Add hike</button>
     <br><br>
 
@@ -64,12 +65,12 @@
             <div formGroupName="{{i}}" >
 
                 <h2>card {{i+1}}</h2>
-                <label for="yr">Year: </label>
-                <input id="yr" type="number" formControlName="year">
+                <label for="">Year: </label>
+                <input type="number" formControlName="year">
                 <br>
 
-                <label for="pcng">Percentage: </label>
-                <input id="pcng" type="number" formControlName="percentage">
+                <label for="">Percentage: </label>
+                <input type="number" formControlName="percentage">
                 <br>
 
                 <button class="btn btn-danger" (click)="deleteCard(i)">Delete</button>
@@ -78,11 +79,11 @@
         </div>
     </div>
 
-        <h5>Workmode:</h5>
-        <input id="hd" type="radio" name="workMode" formControlName="workMode" value="Hybrid">
-        <label for="hd">Hybrid</label>
-        <input id="wh" type="radio" name="workMode" formControlName="workMode" value="WFH" >
-        <label for="wh">WFH</label>
+        <label for="">Workmode:</label>
+        <input type="radio" name="workMode" formControlName="workMode" value="Hybrid">
+        <label for="">Hybrid</label>
+        <input type="radio" name="workMode" formControlName="workMode" value="WFH" >
+        <label for="">WFH</label>
         <!-- <input type="radio" name="mode" formControlName="workMode" value="work" > -->
         <br>
         

@@ -1,4 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
+import { LoginService } from '../login.service';
 
 @Component({
   selector: 'app-login',
@@ -6,7 +10,24 @@ import { Component } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-login(){
+  public loginForm:FormGroup=new FormGroup({
+    email:new FormControl(), 
+    password:new FormControl(),})
+  constructor(private _loginService:LoginService,private _router:Router) { }
+  login(){
+    console.log(this.loginForm);
+    this._loginService.login(this.loginForm.value).subscribe(
+      (data:any)=>{
+        alert("login successful");
+        //go to dashboard
+        this._router.navigateByUrl("/dashboard/home")
+        //store token
+        sessionStorage.setItem('token',data.token);
+      },
+      (err:any)=>{
+        alert("invalid credentials"); 
+      }
+    )
+  }
   
-}
 }

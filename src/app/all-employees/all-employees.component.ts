@@ -17,7 +17,7 @@ export class AllEmployeesComponent {
    _employeesService.getEmployees().subscribe(
       (data:any)=>{
         this.employees=data;
-        console.log(this.employees)
+        console.log(this.employees);
       },
       (err:any)=>{
         alert('Internal server error');

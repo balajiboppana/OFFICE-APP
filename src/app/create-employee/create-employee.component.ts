@@ -26,13 +26,14 @@ export class CreateEmployeeComponent {
       }),
       hikes:new FormArray([]),
       workMode: new FormControl(),
-      
+      wifibill: new FormControl(),
+      travelBill: new FormControl(),     
       // cards: new FormArray([]),
     },
   )
-  get addressFormArray(){
-    return this.employeesForm.get('address') as FormArray 
-  }
+  // get addressFormArray(){
+  //   return this.employeesForm.get('address') as FormArray 
+  // }
 
   get hikesFormArray(){
    return this.employeesForm.get('hikes') as FormArray;
@@ -67,9 +68,9 @@ export class CreateEmployeeComponent {
       })
     )
   }
-  deletecard(i:number){
-    this.addressFormArray.removeAt(i);
-  }
+  // deletecard(i:number){
+  //   this.addressFormArray.removeAt(i);
+  // }
   deleteCard(i:number){
     this.hikesFormArray.removeAt(i);
   }

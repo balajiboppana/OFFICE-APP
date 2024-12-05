@@ -1,13 +1,61 @@
-.login-container{
-    background-color: skyblue;
-    height: auto;
-    width: 20%;
+.body{
+    background-image:linear-gradient(to right,rgb(255, 0, 221),yellow);
+    /* background-size: cover; */
+    height: 100vh;
+    width: 100vw;
     position: relative;
-    align-items: center;
     align-content: center;
-    justify-content: center;
     justify-items: center;
-    justify-self: center;
-    margin-top: 250px;
+}
+form{
+    width: 340px;
+    height: 400px;
+    background-color: white;
+    margin: 0px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px gray;
+    -webkit-box-align: center;
+}
+h1{
+    text-align: center;
+    text-transform: capitalize; 
+      
+}
+input{
+    width: 100%;
+    padding: 10px;
+    border: 0;
+    border-bottom: 1px solid grey;
+    margin-bottom: 10px;
+}
+a{
+    text-decoration: none;
+}
+button{
+    width: 100%;
+    background-color:rgb(9, 77, 249);
+    color: white;
+    padding: 10px;
+    border: 0px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-radius: 10px;
 
+}
+p{
+    margin-right: 40px;
+}
+label{            
+    margin-left: 70px;
+}
+a{
+    font-weight: 600;
+    color: rgb(0, 30, 255);
+    font-style: unset;
+}
+hr{
+    margin-left: -20px;
+    margin-right: -20px;
 }
