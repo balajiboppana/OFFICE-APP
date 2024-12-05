@@ -1,0 +1,18 @@
+table {
+    overflow-y: auto;
+    height: 100%;
+    --bs-table-bg:none
+}
+
+table thead th {
+    position: sticky;
+    top: 0;
+    background-color: lightslategray;
+}
+
+.red{
+    background-color: rgb(231, 77, 77) !important;
+}
+.green{
+    background-color: rgb(60, 177, 60) !important;
+}

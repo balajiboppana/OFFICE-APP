@@ -1,78 +1,83 @@
-<input type="text" placeholder="search" [(ngModel)]="term" (keyup)="filter()">
+<label for="srch"></label>
+<input id="srch" type="text" placeholder="search" [(ngModel)]="term" (keyup)="filter()">
 <br>
 <br>
-<select [(ngModel)]="column" >
-    <option >select</option>
+<select id="slctc" [(ngModel)]="column" >
+    <option id="slctc" >select</option>
     <option>dob</option>
     <option>package</option>
     <option>id</option>
 </select>
-<select [(ngModel)]="order" >
-    <option>asc</option>
+<select id="slcto" [(ngModel)]="order" >
+    <option id="slcto" >asc</option>
     <option>desc</option>
 </select>
 <button (click)="sort()">sort</button>
 <br>
 <br>
-<select [(ngModel)]="limit" >
-    <option >10</option>
+<select id="slcti" [(ngModel)]="limit" >
+    <option id="slcti" >10</option>
     <option>20</option>
     <option>30</option>
     <option>40</option>
 </select>
-<select [(ngModel)]="page" >
-    <option>1</option>
+<select id="slctp" [(ngModel)]="page" >
+    <option id="slctp">1</option>
     <option>2</option>
     <option>3</option>
 </select>
 <button (click)="pagination()">pagination</button>
 <br>
 
-<table class="table table-dark table-striped">
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Company Name</th>
-            <th>Role</th>
-            <th>Package</th>
-            <th>Email</th>
-            <th>DOB</th>
-            <th>Address</th>
-            <th>Hikes</th>
-            <th>Work Mode</th>
-            <th>Gender</th>
-            <th>Id</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let employee of employees">
-            <td>{{employee.name}}</td>
-            <td>{{employee.company}}</td>
-            <td>{{employee.role}}</td>
-            <td [ngClass]="{'text-danger':employee.package<9000000,'text-success':employee.package>=9000000}">{{employee.package}}</td>
-            <td>{{employee.email}}</td>
-            <td>{{employee.dob}}</td>
-            <!-- <td>[{{employee.address}}]
-                [{{employee.address.addressLine}}]
-                [{{employee.address.city}}]
-                [{{employee.address.state}}]
-                [{{employee.address.pincode}}]
-            </td> -->
-        <td>
-            <div>{{employee.address?.addressLine}}</div>
-            <div>{{employee.address?.city}}, {{employee.address?.state}} - {{employee.address?.pincode}}</div>
-        </td>
+<div class="fixTableHead">
+    <table class="table table-bordered" >
+        <thead >
+            <tr>
+                <th>Name</th>
+                <th>Company Name</th>
+                <th>Role</th>
+                <th>Package</th>
+                <th>Email</th>
+                <th>DOB</th>
+                <th>Address</th>
+                <th>Hikes</th>
+                <th>Work Mode</th>
+                <th>Gender</th>
+                <th>Id</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody  >
+            <tr *ngFor="let employee of employees" [ngClass]="{'red':employee.package<9000000,'green':employee.package>=9000000}" >
+                <!--  -->
+                <td>{{employee.name}}</td>
+                <td>{{employee.company}}</td>
+                <td>{{employee.role}}</td>
+                <td  [ngClass]="{'red':employee.package<9000000,'green':employee.package>=9000000}">{{employee.package}}</td>
+                <!-- -->
+                <td>{{employee.email}}</td>
+                <td>{{employee.dob}}</td>
+                <!-- <td>[{{employee.address}}]
+                    [{{employee.address.addressLine}}]
+                    [{{employee.address.city}}]
+                    [{{employee.address.state}}]
+                    [{{employee.address.pincode}}]
+                </td> -->
             <td>
-                <div *ngFor="let hike of employee.hikes">
-                    <div>Year: {{hike.year}}</div>
-                    <div>Percentage: {{hike.percentage}}%</div>
-                </div>
+                <div>{{employee.address?.addressLine}}</div>
+                <div>{{employee.address?.city}}, {{employee.address?.state}} - {{employee.address?.pincode}}</div>
             </td>
-            <td>{{employee.workMode}}</td>
-            <td>{{employee.gender}}</td>
-            <td>{{employee.id}}</td>
-            <td><button (click)="delete(employee.id)" class="btn btn-danger">Delete</button></td>
-        </tr>
-    </tbody>
-</table>
+                <td>
+                    <div *ngFor="let hike of employee.hikes">
+                        <div>Year: {{hike.year}}</div>
+                        <div>Percentage: {{hike.percentage}}%</div>
+                    </div>
+                </td>
+                <td>{{employee.workMode}}</td>
+                <td>{{employee.gender}}</td>
+                <td>{{employee.id}}</td>
+                <td><button (click)="delete(employee.id)" class="btn btn-danger">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
